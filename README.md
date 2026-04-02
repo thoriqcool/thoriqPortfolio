@@ -1,0 +1,2 @@
+# thoriqPortfolio
+thoriq's portfolio
