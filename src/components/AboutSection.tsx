@@ -65,7 +65,7 @@ export default function AboutSection() {
               transition={{ duration: 5, repeat: Infinity }}
               className="aspect-square rounded-3xl glass flex items-center justify-center text-7xl"
             >
-              🌿
+              <img src="/fotokedua.jpg" alt="Profile" className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
 
