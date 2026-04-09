@@ -4,57 +4,39 @@ import { Button } from '@/components/ui/button';
 
 const certificates = [
   {
-    title: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
+    title: 'Peserta KEMNAS 2024',
+    issuer: 'Kegiatan Nasional',
     date: '2024',
-    credentialId: 'AWS-SAA-123456',
-    image: '🏆',
-    color: 'from-orange-500/20 to-yellow-500/20',
-    link: '#',
-  },
-  {
-    title: 'Google Professional Cloud Developer',
-    issuer: 'Google Cloud',
-    date: '2023',
-    credentialId: 'GCP-PCD-789012',
-    image: '☁️',
-    color: 'from-blue-500/20 to-cyan-500/20',
-    link: '#',
-  },
-  {
-    title: 'Meta Front-End Developer',
-    issuer: 'Meta (Coursera)',
-    date: '2023',
-    credentialId: 'META-FE-345678',
-    image: '⚛️',
-    color: 'from-blue-600/20 to-indigo-500/20',
-    link: '#',
-  },
-  {
-    title: 'MongoDB Certified Developer',
-    issuer: 'MongoDB University',
-    date: '2023',
-    credentialId: 'MDB-DEV-901234',
-    image: '🍃',
+    credentialId: 'KEMNAS-2024',
+    image: '🏕️',
     color: 'from-green-500/20 to-emerald-500/20',
     link: '#',
   },
   {
-    title: 'Certified Kubernetes Administrator',
-    issuer: 'CNCF',
-    date: '2022',
-    credentialId: 'CKA-567890',
-    image: '⚙️',
-    color: 'from-indigo-500/20 to-purple-500/20',
+    title: 'Peserta Kemah Budaya 2024',
+    issuer: 'Kegiatan Budaya',
+    date: '2024',
+    credentialId: 'KB-2024',
+    image: '🎭',
+    color: 'from-amber-500/20 to-orange-500/20',
     link: '#',
   },
   {
-    title: 'Professional Scrum Master I',
-    issuer: 'Scrum.org',
-    date: '2022',
-    credentialId: 'PSM-I-234567',
-    image: '📋',
-    color: 'from-teal-500/20 to-cyan-500/20',
+    title: 'Peserta LP3 Aceh Singkil',
+    issuer: 'LP3 Aceh Singkil',
+    date: '2023',
+    credentialId: 'LP3-2023',
+    image: '🌲',
+    color: 'from-green-600/20 to-lime-500/20',
+    link: '#',
+  },
+  {
+    title: 'Juara 3 LBFT',
+    issuer: 'Lomba',
+    date: '2023',
+    credentialId: 'LBFT-3',
+    image: '🥉',
+    color: 'from-yellow-500/20 to-orange-400/20',
     link: '#',
   },
 ];
@@ -70,9 +52,9 @@ export default function CertificatesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium mb-2 block">Kredensial</span>
+          <span className="text-primary font-medium mb-2 block">Prestasi</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Sertifikat &amp; Lisensi
+            Pengalaman & Prestasi
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
@@ -83,16 +65,25 @@ export default function CertificatesSection() {
               key={cert.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="group perspective"
             >
-              <div className="h-full p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
-                <div className={`w-16 h-16 rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${cert.color}`}>
-                  <span className="text-3xl">{cert.image}</span>
-                </div>
+              <div className="h-full p-6 glass rounded-2xl shadow-card transition-all duration-300 group-hover:shadow-glow relative overflow-hidden">
                 
-                <div className="space-y-3">
+                {/* GLOW BACKGROUND */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-primary/10 to-transparent blur-xl" />
+
+                {/* ICON */}
+                <motion.div 
+                  className={`w-16 h-16 rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${cert.color}`}
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                >
+                  <span className="text-3xl">{cert.image}</span>
+                </motion.div>
+                
+                <div className="space-y-3 relative z-10">
                   <div className="flex items-start gap-2">
                     <Award className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <h3 className="font-display text-lg font-bold group-hover:text-primary transition-colors">
@@ -113,12 +104,24 @@ export default function CertificatesSection() {
                     ID: {cert.credentialId}
                   </p>
                   
-                  <Button variant="outline" size="sm" className="rounded-full mt-2" asChild>
-                    <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Verifikasi
-                    </a>
-                  </Button>
+                  {/* BUTTON MUNCUL SAAT HOVER */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    className="pt-2"
+                  >
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="rounded-full opacity-0 group-hover:opacity-100 transition"
+                      asChild
+                    >
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-1" />
+                        Detail
+                      </a>
+                    </Button>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
