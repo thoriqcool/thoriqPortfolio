@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@developer.com',
-    href: 'mailto:hello@developer.com',
+    value: 'thoriqcoolpromax@gmail.com',
+    href: 'mailto:thoriqcoolpromax@gmail.com',
   },
   {
     icon: Phone,
     label: 'Telepon',
-    value: '+62 812 3456 7890',
-    href: 'tel:+6281234567890',
+    value: '+62 823 8612 8396',
+    href: 'tel:+6282386128396',
   },
   {
     icon: MapPin,
     label: 'Lokasi',
-    value: 'Jakarta, Indonesia',
+    value: 'Aceh, Indonesia',
     href: '#',
   },
 ];
@@ -74,23 +74,23 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: formData,
       });
 
       if (error) throw error;
 
       toast({
-        title: 'Pesan Terkirim! ✨',
-        description: 'Terima kasih telah menghubungi saya. Saya akan membalas secepatnya.',
+        title: 'Pesan terkirim 👍',
+        description: 'Terima kasih, nanti saya balas secepatnya.',
       });
 
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error: unknown) {
       console.error('Error sending email:', error);
       toast({
-        title: 'Gagal Mengirim',
-        description: 'Terjadi kesalahan. Silakan coba lagi atau hubungi langsung via email.',
+        title: 'Gagal mengirim',
+        description: 'Coba lagi nanti atau hubungi langsung lewat email.',
         variant: 'destructive',
       });
     } finally {
@@ -116,6 +116,7 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -126,12 +127,11 @@ export default function ContactSection() {
           >
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">
-                Mari Berkolaborasi!
+                Santai aja, hubungi saya
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Punya project menarik atau ingin berkolaborasi? Jangan ragu untuk 
-                menghubungi saya. Saya selalu terbuka untuk diskusi tentang project 
-                baru, ide kreatif, atau kesempatan untuk menjadi bagian dari visi Anda.
+                Kalau mau ngobrol, tanya sesuatu, atau sekadar sharing, silakan hubungi saya. 
+                Saya terbuka untuk diskusi santai, ide baru, atau hal-hal menarik lainnya.
               </p>
             </div>
 
@@ -144,6 +144,7 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.03 }}
                   className="flex items-center gap-4 p-4 glass rounded-xl hover:shadow-card-hover transition-all group"
                 >
                   <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -166,6 +167,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6 p-6 glass rounded-2xl shadow-card">
+              
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -176,13 +178,14 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Nama Anda"
+                    placeholder="Nama kamu"
                     className={errors.name ? 'border-destructive' : ''}
                   />
                   {errors.name && (
                     <p className="text-xs text-destructive">{errors.name}</p>
                   )}
                 </div>
+
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
                     Email
@@ -193,7 +196,7 @@ export default function ContactSection() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@example.com"
+                    placeholder="email kamu"
                     className={errors.email ? 'border-destructive' : ''}
                   />
                   {errors.email && (
@@ -211,7 +214,7 @@ export default function ContactSection() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Subjek pesan"
+                  placeholder="Mau bahas apa?"
                   className={errors.subject ? 'border-destructive' : ''}
                 />
                 {errors.subject && (
@@ -228,7 +231,7 @@ export default function ContactSection() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tuliskan pesan Anda..."
+                  placeholder="Tulis pesan santai aja..."
                   rows={5}
                   className={errors.message ? 'border-destructive' : ''}
                 />
@@ -257,6 +260,7 @@ export default function ContactSection() {
               </Button>
             </form>
           </motion.div>
+
         </div>
       </div>
     </section>
