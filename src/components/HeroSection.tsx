@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Youtube, Instagram } from "lucide-react";
+import { ArrowDown, Github, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThreeScene from "./ThreeScene";
 
@@ -10,20 +10,20 @@ export default function HeroSection() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/naufal-angkasah",
+      href: "https://github.com/thoriqcool",
       label: "GitHub",
     },
     {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/naufal-angkasah/",
-      label: "LinkedIn",
+      icon: Instagram,
+      href: "https://instagram.com/thariq_279",
+      label: "Instagram",
     },
-    { icon: Youtube, href: "https://youtube.com/", label: "YouTube" },
-    { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
   ];
+
   return (
     <section
       id="home"
@@ -33,7 +33,7 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-          {/* FOTO KIRI */}
+          {/* FOTO */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -41,13 +41,13 @@ export default function HeroSection() {
             className="flex-shrink-0"
           >
             <img
-              src="/foto akun1.jpg" // ganti dengan foto kamu
-              alt="Naufal"
+              src="/fotopertama.jpg"
+              alt="Thariq"
               className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-primary shadow-glow"
             />
           </motion.div>
 
-          {/* TEXT KANAN */}
+          {/* TEXT */}
           <div className="max-w-2xl text-center lg:text-left">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -55,17 +55,25 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              <span className="text-gradient">Naufal Portfolio</span>
+              <span className="text-gradient">Thariq Portfolio</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-muted-foreground mb-8"
+              className="text-lg md:text-xl text-muted-foreground mb-6"
             >
-              Saya membangun aplikasi web yang indah dan fungsional, serta
-              membagikan pengetahuan melalui konten yang inspiratif.
+              Saya menyukai alam, bernyanyi, dan belajar hal baru.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-base md:text-lg text-muted-foreground mb-8"
+            >
+              Saya tertarik pada politik dan memiliki pengalaman dalam kegiatan perkemahan yang membentuk saya sebagai pecinta alam. Saya juga menikmati aktivitas seperti bermain gitar dan memancing sebagai cara untuk bersantai.
             </motion.p>
 
             <motion.div
