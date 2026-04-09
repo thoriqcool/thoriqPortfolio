@@ -6,122 +6,137 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 275 60% 10%;
+    /* 🌿 BASE COLORS (Natural Theme) */
+    --background: 40 41% 80%; /* cream */
+    --foreground: 15 13% 20%; /* dark brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 270 20% 10%;
+    --card: 40 30% 92%;
+    --card-foreground: 15 13% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 40 30% 92%;
+    --popover-foreground: 15 13% 20%;
 
-    --primary: 270 100% 20%;
-    --primary-foreground: 0 0% 100%;
+    /* 🌲 PRIMARY (forest green) */
+    --primary: 120 34% 22%;
+    --primary-foreground: 40 41% 90%;
 
-    --secondary: 270 15% 92%;
-    --secondary-foreground: 220 20% 20%;
+    /* 🪵 SECONDARY (wood brown soft) */
+    --secondary: 30 25% 75%;
+    --secondary-foreground: 15 13% 20%;
 
-    --muted: 210 20% 98%;
-    --muted-foreground: 285 80% 70%;
+    /* 🏜️ MUTED */
+    --muted: 38 23% 68%;
+    --muted-foreground: 15 10% 35%;
 
-    --accent: 275 80% 65%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 275 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 175 80% 40%;
-
-    --radius: 0.75rem;
-
-    /* Custom tokens */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(303, 78%, 62%),
-      hsl(309, 98%, 17%)
-    );
-    --gradient-hero: linear-gradient(
-      180deg,
-      hsl(210 20% 98%) 0%,
-      hsl(210 25% 94%) 100%
-    );
-    --navbg: linear-gradient(
-      180deg,
-      hsl(314, 100%, 80%) 0%,
-      hsl(0, 0%, 100%) 100%
-    );
-    --shadow-glow: 0 0 40px hsla(311, 100%, 65%, 0.8);
-    --shadow-card: 0 4px 20px hsl(220 20% 10% / 0.08);
-    --shadow-card-hover: 0 8px 30px hsl(220 20% 10% / 0.12);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 175 80% 40%;
-  }
-
-  .dark {
-    --background: 220 25% 6%;
-    --foreground: 210 20% 98%;
-
-    --card: 220 25% 10%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 20% 98%;
-
-    --primary: 275 80% 50%;
-    --primary-foreground: 220 25% 6%;
-
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 20% 90%;
-
-    --muted: 275 100% 22%;
-    --muted-foreground: 275 15% 78%;
-
-    --accent: 270 10% 50%;
-    --accent-foreground: 220 25% 6%;
+    /* 🟤 ACCENT */
+    --accent: 30 33% 36%;
+    --accent-foreground: 40 41% 90%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 275 100% 22%;
-    --input: 220 20% 18%;
-    --ring: 275 80% 50%;
+    --border: 38 20% 75%;
+    --input: 38 20% 75%;
+    --ring: 120 34% 22%;
 
-    /* Custom tokens dark */
+    --radius: 0.75rem;
+
+    /* 🌿 CUSTOM GRADIENT */
     --gradient-primary: linear-gradient(
-      210deg,
-      hsl(0, 0%, 71%),
-      hsl(0, 0%, 100%)
+      135deg,
+      hsl(120, 34%, 22%),
+      hsl(30, 33%, 36%)
     );
+
     --gradient-hero: linear-gradient(
       180deg,
-      hsl(220 25% 6%) 0%,
-      hsl(220 30% 10%) 100%
+      hsl(40 41% 80%) 0%,
+      hsl(38 23% 68%) 100%
     );
+
     --navbg: linear-gradient(
       180deg,
-      hsl(290, 73%, 52%) 0%,
-      hsl(300, 2%, 17%) 100%
+      hsl(40 41% 85%) 0%,
+      hsl(38 23% 75%) 100%
     );
-    --shadow-glow: 0 0 60px hsla(281, 81%, 79%, 0.4);
+
+    /* 🌟 SHADOW NATURAL */
+    --shadow-glow: 0 0 40px hsla(120, 34%, 22%, 0.3);
+    --shadow-card: 0 4px 20px hsl(30 20% 20% / 0.08);
+    --shadow-card-hover: 0 8px 30px hsl(30 20% 20% / 0.12);
+
+    /* Sidebar */
+    --sidebar-background: 40 30% 90%;
+    --sidebar-foreground: 15 13% 20%;
+    --sidebar-primary: 120 34% 22%;
+    --sidebar-primary-foreground: 40 41% 90%;
+    --sidebar-accent: 38 23% 75%;
+    --sidebar-accent-foreground: 15 13% 20%;
+    --sidebar-border: 38 20% 75%;
+    --sidebar-ring: 120 34% 22%;
+  }
+
+  .dark {
+    /* 🌑 DARK MODE (Forest Night) */
+    --background: 120 20% 8%;
+    --foreground: 40 30% 85%;
+
+    --card: 120 15% 12%;
+    --card-foreground: 40 30% 85%;
+
+    --popover: 120 15% 12%;
+    --popover-foreground: 40 30% 85%;
+
+    --primary: 120 34% 30%;
+    --primary-foreground: 40 41% 90%;
+
+    --secondary: 30 20% 25%;
+    --secondary-foreground: 40 30% 85%;
+
+    --muted: 120 15% 18%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 30 33% 36%;
+    --accent-foreground: 40 41% 90%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 18%;
+    --input: 120 15% 18%;
+    --ring: 120 34% 30%;
+
+    /* 🌌 DARK GRADIENT */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(120, 34%, 30%),
+      hsl(30, 33%, 36%)
+    );
+
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(120 20% 8%) 0%,
+      hsl(120 25% 12%) 100%
+    );
+
+    --navbg: linear-gradient(
+      180deg,
+      hsl(120 25% 15%) 0%,
+      hsl(120 20% 10%) 100%
+    );
+
+    --shadow-glow: 0 0 60px hsla(120, 34%, 30%, 0.3);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
-    --shadow-card-hover: 0 8px 30px hsl(175 80% 50% / 0.15);
-    --sidebar-background: 220 25% 8%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 15%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 175 80% 50%;
+    --shadow-card-hover: 0 8px 30px hsl(120 34% 30% / 0.2);
+
+    --sidebar-background: 120 15% 10%;
+    --sidebar-foreground: 40 30% 85%;
+    --sidebar-primary: 120 34% 30%;
+    --sidebar-primary-foreground: 40 41% 90%;
+    --sidebar-accent: 120 15% 18%;
+    --sidebar-accent-foreground: 40 30% 85%;
+    --sidebar-border: 120 15% 18%;
+    --sidebar-ring: 120 34% 30%;
   }
 }
 
@@ -149,6 +164,7 @@
   .bg-navbg {
     background: var(--navbg);
   }
+
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
@@ -193,22 +209,12 @@
   }
 
   @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
   @keyframes pulse-glow {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
 }
