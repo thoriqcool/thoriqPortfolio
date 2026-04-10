@@ -4,7 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import MountainCarousel from '@components/MountainCarousel';
+import MountainCarousel from '@/components/MountainCarousel';
 import CertificatesSection from '@/components/CertificatesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
